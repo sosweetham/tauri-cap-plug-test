@@ -5,6 +5,8 @@
 
   let name = $state("");
   let greetMsg = $state("");
+
+  let tryData = $state("")
   let data = $state("")
 
   async function greet(event: Event) {
@@ -13,9 +15,14 @@
     greetMsg = await invoke("greet", { name });
   }
 
+  async function tryStorageLoad(event: Event) {
+    event.preventDefault()
+    data = JSON.stringify(await Storage.get(tryData))
+  }
+
   onMount(async() => {
-    console.log(await Storage.set('lol', {lol: "lol"}))
-    data = JSON.stringify(await Storage.get('lol'))
+    console.log(await Storage.set('ham', {ball: "hamm"}))
+    data = JSON.stringify(await Storage.get('hamm'))
     console.log(data)
   })
 </script>
@@ -36,9 +43,10 @@
   </div>
   <p>Click on the Tauri, Vite, and SvelteKit logos to learn more.</p>
 
-  <form class="row" onsubmit={greet}>
-    <input id="greet-input" placeholder="Enter a name..." bind:value={name} />
-    <button type="submit">Greet</button>
+  <form class="flex flex-col gap-2" onsubmit={tryStorageLoad}>
+    <input id="greet-input" placeholder="try load..." bind:value={tryData} />
+    <!-- <input id="greet-input" placeholder="Enter a name..." bind:value={name} /> -->
+    <button type="submit">Try</button>
   </form>
   <p>{greetMsg}</p>
   {data}
@@ -92,6 +100,18 @@
 .row {
   display: flex;
   justify-content: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.gap-2 {
+  gap: 0.2rem;
 }
 
 a {
