@@ -12,6 +12,10 @@ export default {
     }
     return data;
   },
+  async getAllKeys() {
+    const { keys } = await Preferences.keys();
+    return keys;
+  },
   async set(
     key: string,
     value: Record<string, any>

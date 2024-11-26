@@ -8,6 +8,7 @@
 
   let tryData = $state("")
   let data = $state("")
+  let keys = $state("")
 
   async function greet(event: Event) {
     event.preventDefault();
@@ -24,6 +25,7 @@
     console.log(await Storage.set('ham', {ball: "hamm"}))
     data = JSON.stringify(await Storage.get('hamm'))
     console.log(data)
+    keys = JSON.stringify(await Storage.getAllKeys())
   })
 </script>
 
@@ -50,6 +52,7 @@
   </form>
   <p>{greetMsg}</p>
   {data}
+  {keys}
 </main>
 
 <style>
