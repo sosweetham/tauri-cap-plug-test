@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14235538A65C4E3C43B6D938 /* libapp.a in Resources */ = {isa = PBXBuildFile; fileRef = E2B6A9CFD9A4348CFEB88135 /* libapp.a */; };
 		2489A09AC5C798728C2E5D83 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6D4DEDFF2E4414737AC8D13 /* Security.framework */; };
 		439B70BF6EC89E37D2813456 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F584D19662A7EE44E81658D4 /* WebKit.framework */; };
 		50CD1B97E567DD470D4A1247 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9D35CBF53D41B71733273A2 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 		822717371E68E2D1EFCC8174 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		AD02B92DE46AE3F49A0FF7EE /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
 		C0140794649F04BC0FD78823 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = SOURCE_ROOT; };
+		E2B6A9CFD9A4348CFEB88135 /* libapp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libapp.a; sourceTree = "<group>"; };
 		E435754FA70E7084A4CE99C4 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		F584D19662A7EE44E81658D4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		F6D4DEDFF2E4414737AC8D13 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -82,6 +84,7 @@
 		299CA4CFE8877913D1E75B75 /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				960E46C7C1D29CACC9C74C22 /* arm64 */,
 			);
 			path = Externals;
 			sourceTree = "<group>";
@@ -118,6 +121,22 @@
 				0DC251D032F9B49393B2F351 /* vira */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		8ABD6E754B185EAECD7D2AA9 /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				E2B6A9CFD9A4348CFEB88135 /* libapp.a */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
+		960E46C7C1D29CACC9C74C22 /* arm64 */ = {
+			isa = PBXGroup;
+			children = (
+				8ABD6E754B185EAECD7D2AA9 /* debug */,
+			);
+			path = arm64;
 			sourceTree = "<group>";
 		};
 		96E1EF3CE21495073C9B350A = {
@@ -205,6 +224,7 @@
 				50CD1B97E567DD470D4A1247 /* Assets.xcassets in Resources */,
 				EEA11B7301E96215C08BC47D /* LaunchScreen.storyboard in Resources */,
 				DDBBB0765B727360AABB50EB /* assets in Resources */,
+				14235538A65C4E3C43B6D938 /* libapp.a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +312,7 @@
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.tanglelabs.vira;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kodski.vira;
 				PRODUCT_NAME = vira;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -401,7 +421,7 @@
 					"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)",
 					"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.tanglelabs.vira;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kodski.vira;
 				PRODUCT_NAME = vira;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
